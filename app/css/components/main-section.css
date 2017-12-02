@@ -6,12 +6,13 @@
   @apply --card;
   width: 100%;
   border-radius: var(--globalRadius);
+  background: white;
 }
 
 .header {
   @apply --title;
   @apply --subHeading;
-  background: #e67e22;
+  background: #C93756;
   color: #fff;
 }
 

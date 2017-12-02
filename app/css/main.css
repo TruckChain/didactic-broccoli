@@ -10,6 +10,7 @@
 body {
   margin: 0;
   font-family: var(--fontMontserrat);
+  background: #F2F1EF;
 }
 
 .container {

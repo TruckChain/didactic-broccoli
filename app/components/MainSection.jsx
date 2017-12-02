@@ -4,16 +4,20 @@ import classNames from 'classnames/bind';
 import CarrierItem from '../components/CarrierItem';
 import styles from '../css/components/main-section';
 
+import carrierz from '../data/carrier.json';
+
 const cx = classNames.bind(styles);
 
-const MainSection = ({ carriers, onIncrement, onDecrement, onDestroy }) => {
-  const carrierItems = carriers.map((carrier, key) => {
+const MainSection = ({carriers, onIncrement, onDecrement, onDestroy }) => {
+
+  const carrierItems = carrierz.map((carrier, key) => {
     return (
       <CarrierItem
         index={key}
-        id={carrier.id}
+        id={carrier.carrier_id}
         key={key}
-        text={carrier.text}
+        name={carrier.carrier_name}
+        rating={carrier.rating}
       />
     );
   });

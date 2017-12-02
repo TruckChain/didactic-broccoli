@@ -18,7 +18,7 @@ const cx = classNames.bind(styles);
  */
 const App = ({ children }) => {
   return (
-    <div className={cx('container')}>
+    <div>
       <Navigation />
       <div className={cx('app')}>
         {children}

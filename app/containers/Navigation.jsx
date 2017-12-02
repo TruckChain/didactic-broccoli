@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import classNames from 'classnames/bind';
 import styles from '../css/components/navigation';
 
+const logo = require('../images/logo.png');
+
 const cx = classNames.bind(styles);
 
 const Navigation = () => {
@@ -14,7 +16,9 @@ const Navigation = () => {
           <Link
             to="/"
             className={cx('item', 'logo')}
-            activeClassName={cx('active')}>Truck Chain</Link>
+            activeClassName={cx('active')}>
+              <img className={cx('logo')} src={logo} alt=""/>
+            </Link>
           <Link to="/about" className={cx('item')} activeClassName={cx('active')}>About</Link>
         </nav>
       </div>

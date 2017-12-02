@@ -1,0 +1,32 @@
+[
+  {
+    "carrier_id": 1,
+    "carrier_name": "African Trucking",
+    "rating": 77,
+    "number_of_events": 1100
+  },
+  {
+    "carrier_id": 2,
+    "carrier_name": "We Deliver",
+    "rating": 86,
+    "number_of_events": 1800
+  },
+  {
+    "carrier_id": 3,
+    "carrier_name": "FastCarrier",
+    "rating": 92,
+    "number_of_events": 500
+  },
+  {
+    "carrier_id": 4,
+    "carrier_name": "TrucksRUs",
+    "rating": 60,
+    "number_of_events": 600
+  },
+  {
+    "carrier_id": 5,
+    "carrier_name": "ShipIt",
+    "rating": 97,
+    "number_of_events": 113
+  }
+]

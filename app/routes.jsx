@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import { fetchSearchData } from './fetch-data';
-import { App, Search, About } from './pages';
+import { App, Search, About, Carrier } from './pages';
 
 /*
  * @param {Redux Store}
@@ -13,6 +13,7 @@ export default (store) => {
     <Route path="/" component={App}>
       <IndexRoute component={Search} fetchData={fetchSearchData} />
       <Route path="about" component={About} />
+      <Route path="carrier/:name" component={Carrier} />
     </Route>
   );
 };
