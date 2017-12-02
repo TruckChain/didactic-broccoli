@@ -12,11 +12,18 @@ body {
   font-family: var(--fontMontserrat);
 }
 
+.container {
+  width: 100%
+}
+
 .app {
-  @apply --box;
-  height: 100%;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 66px;
   font-weight: normal;
   font-smoothing: antialiased;
+  padding: 0 16px;
 }
 
 

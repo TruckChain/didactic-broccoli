@@ -4,14 +4,14 @@
 
 .main-section {
   @apply --card;
-  width: 50%;
+  width: 100%;
   border-radius: var(--globalRadius);
 }
 
 .header {
   @apply --title;
   @apply --subHeading;
-  background: #ed193a;
+  background: #e67e22;
   color: #fff;
 }
 

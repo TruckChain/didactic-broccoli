@@ -9,13 +9,15 @@ const cx = classNames.bind(styles);
 
 const Navigation = () => {
     return (
-      <nav className={cx('navigation')} role="navigation">
-        <Link
-          to="/"
-          className={cx('item', 'logo')}
-          activeClassName={cx('active')}>Truck Chain</Link>
-        <Link to="/about" className={cx('item')} activeClassName={cx('active')}>About</Link>
-      </nav>
+      <div className={cx('container')} >
+        <nav className={cx('navigation')} role="navigation">
+          <Link
+            to="/"
+            className={cx('item', 'logo')}
+            activeClassName={cx('active')}>Truck Chain</Link>
+          <Link to="/about" className={cx('item')} activeClassName={cx('active')}>About</Link>
+        </nav>
+      </div>
     );
 };
 

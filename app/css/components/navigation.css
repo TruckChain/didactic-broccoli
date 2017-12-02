@@ -1,14 +1,28 @@
 @import '../common/colors';
 @import '../common/typography';
 
+.container {
+  padding: 0 16px;
+  background-color: #ecf0f1;
+  z-index: 1;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 66px;
+}
+
 .navigation {
-  padding: 0 28px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
 }
 
 .item {
   display: inline-block;
   text-decoration: none;
-  padding: 16px 32px;
+  padding: 16px 0px;
+  padding-right: 16px;
   color: var(--colorBlack);
 }
 

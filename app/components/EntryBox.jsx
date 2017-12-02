@@ -18,7 +18,7 @@ const EntryBox = ({onEntryChange, carrier}) => {
       <TextInput
         className={cx('input')}
         value={carrier}
-        placeholder="Suggest a hackday idea . . ."
+        placeholder="name . . ."
         onEntryChange={onEntryChange} />
     </div>
   );

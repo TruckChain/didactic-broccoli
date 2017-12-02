@@ -20,7 +20,7 @@ const MainSection = ({ carriers, onIncrement, onDecrement, onDestroy }) => {
 
   return (
     <div className={cx('main-section')}>
-      <h3 className={cx('header')}>Search for Carrier</h3>
+      <h3 className={cx('header')}>Carriers List</h3>
       <ul className={cx('list')}>{carrierItems}</ul>
     </div>
   );

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from '../css/main';
+import Navigation from './Navigation';
 
 const cx = classNames.bind(styles);
 
@@ -17,8 +18,11 @@ const cx = classNames.bind(styles);
  */
 const App = ({ children }) => {
   return (
-    <div className={cx('app')}>
-      {children}
+    <div className={cx('container')}>
+      <Navigation />
+      <div className={cx('app')}>
+        {children}
+      </div>
     </div>
   );
 };
