@@ -10,9 +10,9 @@ import fetchDataForRoute from './utils/fetchDataForRoute';
 
 // Grab the state from a global injected into
 // server-generated HTML
-const initialState = window.__INITIAL_STATE__;
+// const initialState = window.__INITIAL_STATE__;
 
-const store = configureStore(initialState, browserHistory);
+const store = configureStore({}, browserHistory);
 const history = syncHistoryWithStore(browserHistory, store);
 const routes = createRoutes(store);
 

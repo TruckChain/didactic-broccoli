@@ -1,5 +1,4 @@
 import express from 'express';
-import passport from 'passport';
 import session from 'express-session';
 import bodyParser from 'body-parser';
 import path from 'path';
@@ -90,9 +89,6 @@ export default (app) => {
 
 
   app.use(session(sess));
-
-  app.use(passport.initialize());
-  app.use(passport.session());
 
   app.use(flash());
 };

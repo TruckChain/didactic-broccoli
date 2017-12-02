@@ -1,11 +1,11 @@
 import sinon from 'sinon';
-import * as voteService from '../../services/topics';
+import * as carrierService from '../../services/topics';
 
-const createVoteServiceStub = () => ({
+const createCarrierServiceStub = () => ({
   replace: method => ({
     with: data => {
       const sandbox = sinon.sandbox.create();
-      sandbox.stub(voteService, 'default').returns({
+      sandbox.stub(carrierService, 'default').returns({
         [method]: data
       });
       return sandbox;
@@ -13,5 +13,5 @@ const createVoteServiceStub = () => ({
   })
 });
 
-export default createVoteServiceStub;
+export default createCarrierServiceStub;
 

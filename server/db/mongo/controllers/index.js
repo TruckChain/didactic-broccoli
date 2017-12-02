@@ -1,9 +1,7 @@
-import topics from './topics';
-import users from './users';
+import carriers from './carriers';
 
-export { topics, users };
+export { carriers };
 
 export default {
-  topics,
-  users
+  carriers
 };

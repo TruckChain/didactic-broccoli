@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const ENTER_KEY_CODE = 13;
 
-export default class TopicTextInput extends Component {
+export default class TextInput extends Component {
   constructor(props) {
     super(props);
     this.onSave = this.onSave.bind(this);
@@ -51,7 +51,7 @@ export default class TopicTextInput extends Component {
   }
 }
 
-TopicTextInput.propTypes = {
+TextInput.propTypes = {
   className: PropTypes.string,
   placeholder: PropTypes.string,
   value: PropTypes.string,

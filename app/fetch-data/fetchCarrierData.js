@@ -1,7 +1,7 @@
-import { voteService } from '../services';
+import { carrierService } from '../services';
 
 const fetchData = () => {
-  return voteService().getTopics()
+  return carrierService().getCarriers()
   .then(res => res.data)
   // Returning [] as a placeholder now so it does not error out when this service
   // fails. We should be handling this in our DISPATCH_REQUEST_FAILURE

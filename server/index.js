@@ -16,10 +16,6 @@ const app = express();
  */
 connect();
 
-/*
- * REMOVE if you do not need passport configuration
- */
-initPassport();
 
 if (isDebug) {
   // enable webpack hot module replacement
