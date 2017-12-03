@@ -5,7 +5,6 @@ import { title, meta, link } from './assets';
 import styles from '../css/main';
 import classNames from 'classnames/bind';
 
-
 const cx = classNames.bind(styles);
 
 

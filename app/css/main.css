@@ -27,14 +27,9 @@ body {
   padding: 0 16px;
 }
 
-
-/* Add your global styles below... */
-
-/* ex:
-
+/*
 :global {
-  & .red { color: red; }
-  & .blue { color: blue; }
+  font-family: 'Maven Pro', sans-serif;
 }
-
 */
+

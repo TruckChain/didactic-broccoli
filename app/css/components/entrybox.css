@@ -2,8 +2,10 @@
 @import '../common/input';
 
 .entrybox {
-  width: 100%;
+  width: 30%;
   margin-bottom: 16px;
+  height: 20px;
+  align-self: center;
 }
 
 .header {
@@ -16,5 +18,6 @@
   @apply --input;
   text-align: center;
   outline: none;
+  height: 20px;
 }
 

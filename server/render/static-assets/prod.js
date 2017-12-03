@@ -15,6 +15,7 @@ ga('send', 'pageview');
 
 const createStylesheets = () => `
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed" />
+<link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
 <link rel="stylesheet" href="/assets/${assets['app.css']}" />
 `;
 

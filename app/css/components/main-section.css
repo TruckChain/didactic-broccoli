@@ -3,6 +3,7 @@
 @import '../common/card';
 
 .main-section {
+  margin-top: 16px;
   @apply --card;
   width: 100%;
   border-radius: var(--globalRadius);
@@ -14,10 +15,13 @@
   @apply --subHeading;
   background: #C93756;
   color: #fff;
+  display: flex;
+  justify-content: space-between;
 }
 
 .list {
   list-style: none;
+  width: 100%;
   padding: 16px;
-}
+ }
 

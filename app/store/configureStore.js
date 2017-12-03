@@ -21,11 +21,11 @@ export default function configureStore(initialState, history) {
     middleware.push(createLogger());
     store = createStore(rootReducer, initialState, compose(
       applyMiddleware(...middleware),
-      /*  reduxSearch({
+      reduxSearch({
         // Configure redux-search by telling it which resources to index for searching
         resourceIndexes: {
           // In this example carriers will be searchable by :title and :author
-          carriers: ['name', 'title']
+          carriers: ['name']
         },
         // This selector is responsible for returning each collection of searchable resources
         resourceSelector: (resourceName, state) => {
@@ -33,7 +33,7 @@ export default function configureStore(initialState, history) {
           // For example "books" are stored under state.resources.carriers
           return state.resources.get(resourceName)
         }
-      }), */
+      }),
       typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f
     ));
   } else {

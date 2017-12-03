@@ -14,7 +14,6 @@ const cx = classNames.bind(styles);
 const EntryBox = ({onEntryChange, carrier}) => {
   return (
     <div className={cx('entrybox')}>
-      <h1 className={cx('header')}>Search for a Carrier</h1>
       <TextInput
         className={cx('input')}
         value={carrier}

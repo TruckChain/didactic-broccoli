@@ -14,13 +14,14 @@ class Search extends Component {
     const {newCarrier, carriers, typing } = this.props;
     return (
       <div className={cx('search')}>
-        <EntryBox
-          carrier={newCarrier}
-          onEntryChange={typing}
-       />
         <MainSection
           carriers={carriers}
-   />
+        >
+          <EntryBox
+            carrier={newCarrier}
+            onEntryChange={typing}
+          />
+        </MainSection>
       </div>
     );
   }

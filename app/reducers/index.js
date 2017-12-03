@@ -3,6 +3,8 @@ import { routerReducer as routing } from 'react-router-redux';
 import { reducer as searchReducer } from 'redux-search';
 import carrier from '../reducers/carrier';
 import * as types from '../types';
+import { reducer as searchReducer } from 'redux-search'
+
 
 const isFetching = (state = false, action) => {
   switch (action.type) {
@@ -22,7 +24,7 @@ const rootReducer = combineReducers({
   isFetching,
   carrier,
   routing,
-  // search: searchReducer,
+  search: searchReducer,
 });
 
 export default rootReducer;
