@@ -148,7 +148,7 @@ function read_json(filename) {
     return JSON.parse(fs.readFileSync(filename, 'utf8'));
   } catch (err) { }
 
-  return {};
+  return [];
 }
 
 function write_json(filename, obj) {
