@@ -3,7 +3,7 @@
 var web3 = require('web3');
 var web3 = new web3(new web3.providers.HttpProvider("http://localhost:8545"));
 
-var abiArray = [{"constant":true,"inputs":[],"name":"getTripNumber","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_id","type":"uint256"},{"name":"_time","type":"uint256"},{"name":"_z","type":"uint256"}],"name":"trackBumpEvent","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"destroy","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_id","type":"uint256"},{"name":"_time","type":"uint256"},{"name":"_light","type":"uint256"}],"name":"trackLightEvent","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_id","type":"uint256"}],"name":"isTripFinalized","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_id","type":"uint256"}],"name":"finalizeTrip","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getCarrierQuality","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_light","type":"uint256"},{"name":"_z","type":"uint256"}],"name":"newTrip","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_id","type":"uint256"}],"name":"getTripRating","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getCarrierName","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_name","type":"bytes32"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"}];
+var abiArray = read_json('../../refactored-train/contracts/carrierRegistry.abi');
 
 var MyContract = web3.eth.contract(abiArray);
 
@@ -11,7 +11,7 @@ function get_number_of_trips(carrier_id) {
     var contract_address = get_contact_address_for_carrier(carrier_id);
     var instance = MyContract.at(contract_address);
 
-    return instance.getTripNumber.call().toString();
+    return instance.getTripCount.call().toString();
 }
 
 function get_trip_data(contract_address, trip_id) {
@@ -45,7 +45,7 @@ console.log(result);
 function get_contact_address_for_carrier(carrier_id) {
     switch (carrier_id) {
         case 1:
-            return '0xC88B6650665cE79BbC30383417CDd1ac6A47CA78';
+            return '0x0D84efb69AE7d1E3f4aE264248797f1F6024062a';
         default:
             return;
     }
@@ -150,7 +150,7 @@ function read_json(filename) {
     return JSON.parse(fs.readFileSync(filename, 'utf8'));
   } catch (err) { }
 
-  return [];
+  return {};
 }
 
 function write_json(filename, obj) {
@@ -164,9 +164,13 @@ function write_json(filename, obj) {
 }
 
 function update_all() {
-    var completed_trips = read_json('../app/data/completed_trips.json');
-    var all_carriers = read_json('../app/data/carriers.json');
-    var all_trips = read_json('../app/data/trips.json');
+    var completed_trips_file = '../app/data/completed_trips.json';
+    var all_carriers_file = '../app/data/carriers.json';
+    var all_trips_file = '../app/data/trips.json';
+
+    var completed_trips = read_json(completed_trips_file);
+    var all_carriers = read_json(all_carriers_file);
+    var all_trips = read_json(all_trips_file);
 
     var number_of_trips = get_number_of_trips(1);
 
@@ -182,9 +186,9 @@ function update_all() {
         completed_trips = set_completed_trips(completed_trips, result);
     }
 
-    write_json('../app/data/completed_trips.json', completed_trips);
-    write_json('../app/data/carriers.json', all_carriers);
-    write_json('../app/data/trips.json', all_trips);
+    write_json(completed_trips_file, completed_trips);
+    write_json(all_carriers_file, all_carriers);
+    write_json(all_trips_file, all_trips);
 }
 
 update_all();
