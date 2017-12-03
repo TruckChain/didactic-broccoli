@@ -8,18 +8,21 @@ import { createSearchAction, getSearchSelectors } from 'redux-search'
 const cx = classNames.bind(styles);
 
 import trips from '../data/trips.json';
+import carriers from '../data/carriers.json';
 
 
 export default class RouteList extends React.Component {
   constructor(props) {
+    console.log(carriers);
     super(props);
+    const selectedCarrier = carriers.filter(carrier => carrier.carrier_name === props.carrier_name)[0];
     this.state = {
-      Routes: trips.filter(trip => trip.carriers.indexOf(this.props.carrier_id) !== -1),
+      routes: trips.filter(trip => trip.carriers.indexOf(selectedCarrier.carrier_id) !== -1),
     };
   };
 
   tripItems = () => {
-    return trips.map((trip, key) => {
+    return this.state.routes.map((trip, key) => {
       return (
         <RouteItem
           index={key}
