@@ -90,7 +90,8 @@ function update_carrier_rating(current, new_event) {
     "trip_id": 1,
     "trip_name": "Cape Town to Johannesburg",
     "rating": 2.6875,
-    "number_of_events": 4
+    "number_of_events": 4,
+    "carriers": [1, 2]
 }
 */
 function update_trip_rating(current, new_event) {
@@ -107,7 +108,8 @@ function update_trip_rating(current, new_event) {
         "trip_id": current.trip_id,
         "trip_name": current.trip_name,
         "rating": new_rating,
-        "number_of_events": new_number_of_events
+        "number_of_events": new_number_of_events,
+        "carriers": current.carriers
     }
 }
 
