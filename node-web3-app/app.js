@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var web3 = require('web3');
 var web3 = new web3(new web3.providers.HttpProvider("http://localhost:8545"));
 
@@ -148,7 +150,7 @@ function read_json(filename) {
     return JSON.parse(fs.readFileSync(filename, 'utf8'));
   } catch (err) { }
 
-  return {};
+  return [];
 }
 
 function write_json(filename, obj) {
