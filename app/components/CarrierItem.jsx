@@ -12,7 +12,7 @@ const CarrierItem = ({ name, id, rating, numberOfTrips }) => {
     <li className={cx('carrier-item')} key={id}>
       <div className={cx('info')}>
         <span className={cx('carrier')}>{name}</span>
-        <Link to={`/carrier/${name}`} name={name} className={cx('link')}>See Trips</Link>
+        <Link to={`/carrier/${name}`} id={id} name={name} className={cx('link')}>See Trips</Link>
       </div>
       <div className={cx('info')}>
         <span className={cx('ratings')}><b>rating: {formattedRating}%</b></span>

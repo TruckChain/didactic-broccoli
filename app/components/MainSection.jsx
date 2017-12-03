@@ -19,7 +19,7 @@ export default class MainSection extends React.Component {
   };
 
   carrierItems = () => {
-    return carrierz.map((carrier, key) => {
+    return this.state.carriers.map((carrier, key) => {
       return (
         <CarrierItem
           index={key}
