@@ -1,6 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
-import { reducer as searchReducer, reduxSearch } from 'redux-search';
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import rootReducer from '../reducers';
@@ -21,7 +20,7 @@ export default function configureStore(initialState, history) {
     middleware.push(createLogger());
     store = createStore(rootReducer, initialState, compose(
       applyMiddleware(...middleware),
-      reduxSearch({
+     /*  reduxSearch({
         // Configure redux-search by telling it which resources to index for searching
         resourceIndexes: {
           // In this example carriers will be searchable by :title and :author
@@ -33,7 +32,7 @@ export default function configureStore(initialState, history) {
           // For example "books" are stored under state.resources.carriers
           return state.resources.get(resourceName)
         }
-      }),
+      }), */
       typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f
     ));
   } else {

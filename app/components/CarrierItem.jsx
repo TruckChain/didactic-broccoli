@@ -6,15 +6,18 @@ import styles from '../css/components/carrier-item';
 
 const cx = classNames.bind(styles);
 
-const CarrierItem = ({ name, id, rating }) => {
-
+const CarrierItem = ({ name, id, rating, numberOfTrips }) => {
+  const formattedRating = +(rating).toFixed(2);
   return (
     <li className={cx('carrier-item')} key={id}>
       <div className={cx('info')}>
         <span className={cx('carrier')}>{name}</span>
-        <Link to={`/carrier/${name}`} name={name} className={cx('link')}> More Details </Link>
+        <Link to={`/carrier/${name}`} name={name} className={cx('link')}>See Trips</Link>
       </div>
-      <ul className={cx('ratings')}>rating: {rating}</ul>
+      <div className={cx('info')}>
+        <span className={cx('ratings')}><b>rating: {formattedRating}%</b></span>
+        <span className={cx('ratings')}>based on {numberOfTrips} trips</span>
+      </div>
     </li>
   );
 };

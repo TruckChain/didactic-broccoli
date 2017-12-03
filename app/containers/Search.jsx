@@ -10,6 +10,10 @@ import styles from '../css/components/search';
 const cx = classNames.bind(styles);
 
 class Search extends Component {
+
+  componentDidMount() {
+    setInterval(this.forceUpdate(), 2000);
+  }
   render() {
     const {newCarrier, carriers, typing } = this.props;
     return (

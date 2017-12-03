@@ -6,7 +6,7 @@ import styles from '../css/components/main-section';
 import { createSearchAction, getSearchSelectors } from 'redux-search'
 
 
-import carrierz from '../data/carrier.json';
+import carrierz from '../data/carriers.json';
 
 const cx = classNames.bind(styles);
 
@@ -27,6 +27,7 @@ export default class MainSection extends React.Component {
           key={key}
           name={carrier.carrier_name}
           rating={carrier.rating}
+          numberOfTrips={carrier.number_of_events}
         />
       );
     });
